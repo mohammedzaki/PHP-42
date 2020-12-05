@@ -29,7 +29,7 @@ function checkday($day) {
 
     if ($day == "Fri")
         echo "Have a nice weekend!";
-    elseif ($day == "Sun")
+    elseif ($day != "Sun")
         echo "Have a nice Sunday!";
     else {
         echo "Wonder which day is this ?";
