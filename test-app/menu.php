@@ -10,5 +10,16 @@
 <menu>
     <a href="home.php">Home Page</a> -
     <a href="products.php">Products</a> -
-    <a href="login.php">Login</a>
+    <a href="add-new-product.html">Add New Product</a> -
+
+
+
+    <?php
+    if (get_from_session(USER_NAME_KEY) != null) {
+        $name = get_from_session(USER_NAME_KEY);
+        echo "<a href='logout.php'>Logout, {$name}</a>";
+    } else {
+        echo '<a href="login.php">Login</a>';
+    }
+    ?>
 </menu>
