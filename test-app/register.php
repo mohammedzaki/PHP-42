@@ -16,23 +16,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
 
-    if (!empty($username) && !empty($password)) {
+    if (!empty($username) && !empty($password) && !empty($firstname) && !empty($lastname)) {
 
-        $user = check_user($username, $password);
+        $res = insert_new_user($firstname, $lastname, $username, $password);
 
-        if ($user != null) {
-            // go to  home
-            save_into_session(USER_NAME_KEY, $user['firstname'] . ' ' . $user['lastname']);
-            save_into_session(USER_ID, $user['ID']);
-
-            header("Location: home.php");
+        if ($res['success']) {
+            header("Location: login.php?message=" . $res['message']);
         } else {
-            echo 'please enter valid username and password!';
+            echo $res['message'];
         }
 
     } else {
-        echo 'username and password are required.';
+        echo 'please enter valid data!';
     }
 }
 
@@ -44,14 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 
-<?php echo isset($_GET['message']) ? $_GET['message'] : ''; ?>
-
 <form action="<?php $_PHP_SELF ?>" method="POST">
+    First Name: <input type="text" name="firstname"/> <br>
+    Last Name: <input type="text" name="lastname"/> <br>
     Username: <input type="text" name="username"/> <br>
     Password: <input type="text" name="password"/> <br>
     <input type="submit"/>
 </form>
-<a href="register.php">Register</a>
 
 </body>
 

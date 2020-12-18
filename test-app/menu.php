@@ -17,7 +17,8 @@
     <?php
     if (get_from_session(USER_NAME_KEY) != null) {
         $name = get_from_session(USER_NAME_KEY);
-        echo "<a href='logout.php'>Logout, {$name}</a>";
+        echo "<a href='profile.php'>Edit my profile</a> 
+              <a href='logout.php'>Logout, {$name}</a>";
     } else {
         echo '<a href="login.php">Login</a>';
     }

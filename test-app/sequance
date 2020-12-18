@@ -1,0 +1,13 @@
+1. login
+2. db_tables
+3. user_tbl
+4. check_user
+5. execute select sql command
+6. call select_data from database_operations.php
+    6.1. connect_db
+    6.2. fetch result from mysqli_query
+    6.3. check on the result and return it
+7. back to check_user
+8. return result from select_data
+9. return to login page to check on result
+

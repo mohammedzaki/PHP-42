@@ -7,6 +7,8 @@
  */
 
 define('USER_NAME_KEY', 'username');
+define('USER_ID', 'user_id');
+
 
 session_start();
 

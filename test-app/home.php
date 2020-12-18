@@ -8,13 +8,6 @@
 
 require_once "/Applications/mampstack-7.4.10-0/apache2/htdocs/php-42/test-app/session_handler.php";
 
-//echo 'Request Type is: ' . $_SERVER['REQUEST_METHOD'] ;
-//
-//$name = '';
-//
-//if (isset($_REQUEST['name'])) {
-//    $name = $_REQUEST['name'];
-//}
 $name = '';
 
 if (get_from_session(USER_NAME_KEY) != null) {
