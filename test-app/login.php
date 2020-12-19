@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($user != null) {
             // go to  home
-            save_into_session(USER_NAME_KEY, $user['firstname'] . ' ' . $user['lastname']);
-            save_into_session(USER_ID, $user['ID']);
+            $session->save(SessionKeys::USER_NAME_KEY, $user['firstname'] . ' ' . $user['lastname']);
+            save_into_session(SessionKeys::USER_ID, $user['ID']);
 
             header("Location: home.php");
         } else {

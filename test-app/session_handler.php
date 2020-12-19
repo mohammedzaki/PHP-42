@@ -6,8 +6,7 @@
  * Time: 4:58 PM
  */
 
-define('USER_NAME_KEY', 'username');
-define('USER_ID', 'user_id');
+require_once "/Applications/mampstack-7.4.10-0/apache2/htdocs/php-42/test-app/SessionKeys.php";
 
 
 session_start();

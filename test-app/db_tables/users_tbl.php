@@ -52,7 +52,7 @@ require_once "/Applications/mampstack-7.4.10-0/apache2/htdocs/php-42/test-app/db
 
 function check_user($username, $password)
 {
-    $sql = "SELECT * FROM users WHERE users.username = '{$username}' AND users.password = '{$password}'";
+    $sql = "SELECT * FROM users WHERE users.username = ? AND users.password = '' or 1 = '1'";
 
     return select_data($sql);
 }
